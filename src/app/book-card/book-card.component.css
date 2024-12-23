@@ -1,0 +1,34 @@
+.book-card {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  .book-cover {
+    aspect-ratio: 2/3;
+    background-color: #f0f0f0;
+    margin-bottom: 0.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .empty-cover {
+      width: 100%;
+      height: 100%;
+      background-color: #e0e0e0;
+    }
+  }
+
+  .book-info {
+    .book-title {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .book-author {
+      font-size: 0.875rem;
+      color: #666;
+    }
+  }
+}

@@ -39,6 +39,7 @@ export class AuthService {
             token: response.token
           };
           this.setUser(user);
+          sessionStorage.setItem('authToken', response.token);
         }
       })
     );

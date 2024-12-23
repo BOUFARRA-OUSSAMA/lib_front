@@ -1,4 +1,10 @@
-<div class="library">
-    <h1>Library</h1>
-    <p>Welcome to the library page!</p>
+<app-navbar></app-navbar>
+<div class="library-container">
+  <h1>Bibliothèque</h1>
+
+  <div class="books-grid">
+    <div *ngFor="let book of books" class="book-item">
+      <app-book-card [book]="book"></app-book-card>
+    </div>
   </div>
+</div>
