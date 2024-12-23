@@ -1,0 +1,96 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-6">
+  <!-- Header Section -->
+  <div class="columns is-vcentered">
+    <div class="column is-half">
+      <h1 class="title is-size-1 has-text-primary" style="color: #6f9e00">
+        Welcome to BooksFrog
+      </h1>
+      <p class="subtitle is-size-4">
+        Dive into a world of imagination and learning with our extensive online
+        kids' book library. Perfect for readers of all ages!
+      </p>
+      <button
+        class="button is-primary is-large"
+        style="background-color: #6f9e00; border-radius: 8px;"
+      >
+        <span class="icon">
+          <i class="fas fa-book-reader"></i>
+        </span>
+        <span>Start Exploring</span>
+      </button>
+    </div>
+    <div class="column is-half">
+      <!-- Lottie Animation -->
+      <dotlottie-player
+        src="https://lottie.host/1afea61f-a3d5-4d4e-81c7-66afc8725224/84uaeDZN5b.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 100%; max-width: 500px; height: auto;"
+        loop
+        autoplay
+      >
+      </dotlottie-player>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="columns is-multiline mt-6">
+    <div class="column is-one-third has-text-centered">
+      <div class="feature-box">
+        <span class="icon is-large has-text-primary" style="color: #6f9e00">
+          <i class="fas fa-book fa-3x"></i>
+        </span>
+        <h2 class="title is-size-4 mt-3">Vast Collection</h2>
+        <p>
+          Explore thousands of books covering every topic, from fairy tales to
+          fun facts, handpicked for kids!
+        </p>
+      </div>
+    </div>
+    <div class="column is-one-third has-text-centered">
+      <div class="feature-box">
+        <span class="icon is-large has-text-primary" style="color: #6f9e00">
+          <i class="fas fa-frog fa-3x"></i>
+        </span>
+        <h2 class="title is-size-4 mt-3">Fun Interface</h2>
+        <p>
+          Designed to be colorful and engaging, making reading online as
+          enjoyable as playing a game.
+        </p>
+      </div>
+    </div>
+    <div class="column is-one-third has-text-centered">
+      <div class="feature-box">
+        <span class="icon is-large has-text-primary" style="color: #6f9e00">
+          <i class="fas fa-user-friends fa-3x"></i>
+        </span>
+        <h2 class="title is-size-4 mt-3">For All Ages</h2>
+        <p>
+          From toddlers to teens, there's something for everyone in our
+          library.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper Section -->
+  <div class="columns is-centered mt-6">
+    <div class="column is-half has-text-centered">
+      <swiper-container
+        autoplay-delay="3500"
+        loop="true"
+        speed="1000"
+        navigation="false"
+        class="book-swiper"
+        slides-per-view="2"
+      >
+        <swiper-slide *ngFor="let book of books">
+          <img [src]="book.cover" [alt]="book.title" class="book-image" />
+          <p class="book-title">{{ book.title }}</p>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
+</div>

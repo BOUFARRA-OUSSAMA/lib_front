@@ -1,0 +1,132 @@
+<div class="container">
+  <div class="columns is-centered is-vcentered" style="height: 100vh">
+    <div class="column is-half">
+      <div class="box">
+        <!-- Logo Image -->
+
+
+        <div class="has-text-centered">
+          <img
+            src="assets/images/welcome.png"
+            alt="BooksFrog Logo"
+            style="width: 600px; height: auto"
+          />
+        </div>
+        <p
+          class="is-size-3 has-text-centered"
+          style="color: #393939; font-family: FunGroovy"
+        >
+          Explore thouseands of children's books
+        </p>
+        <p
+          class="is-size-5 has-text-centered"
+          style="color: #393939; font-family: FunGroovy"
+        >
+          Sign up to get started
+        </p>
+        <form (ngSubmit)="onRegister()" [formGroup]="registerForm" style="padding: 20px">
+          <div class="field">
+            <div class="control has-icons-left has-icons-right">
+              <input
+                class="input is-medium"
+                type="email"
+                placeholder="Email"
+                required
+                formControlName="email"
+                style="border: 1px solid #6f9e00; border-radius: 5px"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope" style="color: #6f9e00"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control has-icons-left has-icons-right">
+              <input
+                class="input is-medium" 
+                type="text"
+                placeholder="Username"
+                required
+                formControlName="username"
+                style="border: 1px solid #6f9e00; border-radius: 5px"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-user" style="color: #6f9e00"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control has-icons-left has-icons-right">
+              <input
+                class="input is-medium"
+                type="password"
+                placeholder="Password"
+                required
+                formControlName="password"
+                style="border: 1px solid #6f9e00; border-radius: 5px"
+                id="password"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock" style="color: #6f9e00"></i>
+              </span>
+              <span
+                class="icon is-small is-right password-toggle"
+                (click)="togglePasswordVisibility()"
+              >
+                <i
+                  class="fas fa-eye"
+                  id="togglePassword"
+                  style="color: #6f9e00"
+                ></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control has-icons-left has-icons-right">
+              <input
+                class="input is-medium"
+                type="password"
+                placeholder="Confirm Password"
+                required
+                formControlName="confirmPassword"
+                style="border: 1px solid #6f9e00; border-radius: 5px"
+                id="confirmPassword"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock" style="color: #6f9e00"></i>
+              </span>
+              <span
+                class="icon is-small is-right password-toggle"
+                (click)="toggleConfirmPasswordVisibility()"
+              >
+                <i
+                  class="fas fa-eye"
+                  id="toggleConfirmPassword"
+                  style="color: #6f9e00"
+                ></i>
+              </span>
+            </div>
+          </div>
+          <div class="control">
+            <button
+              class="button is-fullwidth is-large"
+              style="color: #6f9e00;"
+              type="submit"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+        <p class="has-text-centered mt-4">
+          Already have an account?
+          <a href="/login" style="color: #6f9e00">Login here</a>
+        </p>
+        <p *ngIf="errorMessage" class="has-text-centered mt-4" style="color: red">{{ errorMessage }}</p>
+      </div>
+      <div *ngIf="errorMessage" class="notification is-danger">
+        <button class="delete" (click)="closeNotification()"></button>
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>

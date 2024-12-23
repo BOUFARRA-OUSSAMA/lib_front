@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    height: 100vh;
+    background: url('/assets/images/frogrepeat.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .frog-image {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .button-container:hover .frog-image,
+  .button-container:focus-within .frog-image {
+    bottom: 0;
+    opacity: 1;
+  }
+  

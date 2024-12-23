@@ -1,0 +1,10 @@
+/* filepath: /C:/Users/NameLess/Desktop/FROG/booksfrog_frontend-main/src/styles.css */
+/* @import '../node_modules/bulma/css/bulma.min.css';
+@import '../node_modules/bulmaswatch/superhero/bulmaswatch.min.css'; */
+
+@font-face {
+  font-family: "FunGroovy";
+  src: url("assets/fonts/FunGroovy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
