@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-library',
-  standalone: true,
-  imports: [],
-  templateUrl: './library.component.html',
-  styleUrl: './library.component.css'
+    selector: 'app-library',
+    templateUrl: './library.component.html',
+    styleUrls: ['./library.component.css'],
+    standalone: false
 })
-export class LibraryComponent {
+export class LibraryComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }

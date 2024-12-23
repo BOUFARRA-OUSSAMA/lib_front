@@ -1,0 +1,12 @@
+.library {
+    padding: 20px;
+  }
+  
+  .library h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .library p {
+    font-size: 1.2em;
+  }
