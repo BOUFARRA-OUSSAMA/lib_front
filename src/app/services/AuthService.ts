@@ -32,6 +32,7 @@ export class AuthService {
       tap((response: any) => {
         if (response.token) {
           const user = {
+            id: response.id,
             username: response.username,
             email: response.email,
             isPremium: response.isPremium,

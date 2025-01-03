@@ -1,10 +1,15 @@
 <div class="book-card">
   <div class="book-cover">
-    <img *ngIf="book?.coverUrl" [src]="book.coverUrl" [alt]="book.title">
-    <div *ngIf="!book?.coverUrl" class="empty-cover"></div>
+    <a [routerLink]="['/book', book.id]">
+      <img *ngIf="book?.coverImage" [src]="book.coverImage" [alt]="book.title" class="book-cover" />
+      <div *ngIf="!book?.coverImage" class="empty-cover">No Cover</div>
+    </a>
   </div>
   <div class="book-info">
-    <h3 class="book-title">{{ book?.title || 'N/A' }}</h3>
+    <h3 class="book-title">
+      <a [routerLink]="['/book', book.id]">{{ book?.title || 'N/A' }}</a>
+    </h3>
+    <p class="book-category">{{ book?.categoryName || 'No Category' }}</p>
     <p class="book-author">{{ book?.author || 'N/A' }}</p>
   </div>
 </div>

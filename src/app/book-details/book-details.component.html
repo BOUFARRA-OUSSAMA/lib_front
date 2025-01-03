@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div *ngIf="loading" class="loading">Loading...</div>
+
+<div *ngIf="!loading && book" class="book-details-container">
+  <!-- Book Details Section -->
+  <div class="book-details">
+    <div class="book-cover-section">
+      <img
+        *ngIf="book.coverImage"
+        [src]="book.coverImage"
+        [alt]="book.title"
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info-section">
+      <h1 class="book-title">{{ book.title }}</h1>
+      <p><strong>Author:</strong> {{ book.author }}</p>
+      <p><strong>Category:</strong> {{ book.categoryName || 'No Category' }}</p>
+
+      <div class="buttons">
+        <!-- 'Read Now' button -->
+        <button class="btn btn-read" (click)="goToReader()">Read Now</button>
+      </div>
+
+      <div class="book-storyline">
+        <h2>Storyline:</h2>
+        <p>{{ book.summary }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Books Section at the bottom -->
+  <div class="bottom-related-books">
+    <app-related-books [categoryId]="book.categoryId"></app-related-books>
+  </div>
+</div>
+
+<div *ngIf="!loading && !book">Book not found.</div>

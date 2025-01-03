@@ -1,0 +1,73 @@
+.book-details-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.book-details {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.book-cover-section {
+  flex: 1;
+  max-width: 350px; /* Adjust this value to change the width */
+  margin-right: 20px;
+}
+
+.book-cover {
+  width: 100%; /* Ensures the image scales within the defined max-width */
+  height: auto; /* Keeps aspect ratio */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-info-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.book-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.book-storyline {
+  margin-top: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons .btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.buttons .btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-download {
+  background-color: #28a745;
+}
+
+.btn-download:hover {
+  background-color: #218838;
+}
+
+.bottom-related-books {
+  margin-top: 40px;      /* Some spacing */
+  display: block;        /* Ensure it spans full width */
+}

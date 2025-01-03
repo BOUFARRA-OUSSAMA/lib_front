@@ -1,0 +1,8 @@
+<div class="search-bar-container">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search by title, author, or category"
+    (input)="onSearch()"
+  />
+</div>

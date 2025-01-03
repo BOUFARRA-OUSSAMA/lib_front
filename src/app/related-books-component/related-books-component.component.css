@@ -1,0 +1,27 @@
+.related-books-container {
+  /* space above or below the section */
+  margin-top: 20px;
+}
+
+.related-books {
+  display: flex; 
+  flex-wrap: wrap; /* or use a grid if you prefer */
+  gap: 15px; 
+}
+
+.related-book {
+  cursor: pointer;
+  text-align: center;
+  width: 120px; /* or your desired fixed width */
+}
+
+.related-book-cover {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.related-book-info {
+  margin-top: 8px;
+}

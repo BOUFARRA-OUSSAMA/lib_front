@@ -1,0 +1,22 @@
+<div class="related-books-container" *ngIf="relatedBooks.length > 0">
+  <h3>Related Books</h3>
+  <div class="related-books">
+    <!-- slice:0:4 will show only the first 4 items -->
+    <div
+      *ngFor="let book of (relatedBooks | slice: 0:5)"
+      class="related-book"
+      (click)="goToBookDetails(book.id)"
+    >
+      <img
+        *ngIf="book.coverImage"
+        [src]="book.coverImage"
+        [alt]="book.title"
+        class="related-book-cover"
+      />
+      <div class="related-book-info">
+        <p>{{ book.title }}</p>
+        <p class="author">{{ book.author }}</p>
+      </div>
+    </div>
+  </div>
+</div>

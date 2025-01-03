@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div *ngIf="loading" class="loading">Loading user profile...</div>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<div *ngIf="!loading && user" class="profile-container">
+  <h2>User Profile</h2>
+
+  <!-- Profile Picture Section -->
+  <div class="profile-picture">
+    <img src="assets/images/logo.png" alt="Profile Picture" class="profile-picture" />
+  </div>
+
+  <!-- User Information -->
+  <div class="profile-info">
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Is Premium:</strong> {{ user.isPremium ? 'Yes' : 'No' }}</p>
+  </div>
+
+  <!-- Change Password Section -->
+  <div class="change-password-section">
+    <h3>Change Password</h3>
+    <form (ngSubmit)="changePassword()">
+      <div class="form-group">
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required />
+      </div>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>

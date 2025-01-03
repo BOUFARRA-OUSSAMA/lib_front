@@ -1,10 +1,42 @@
 <app-navbar></app-navbar>
 <div class="library-container">
-  <h1>Bibliothèque</h1>
+  <!-- Search Bar -->
+  <app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
 
-  <div class="books-grid">
-    <div *ngFor="let book of books" class="book-item">
-      <app-book-card [book]="book"></app-book-card>
-    </div>
+  <!-- Books Grid -->
+  <div class="books-grid" [class.loading]="loading">
+    <app-book-card 
+      *ngFor="let book of books" 
+      [book]="book"
+    ></app-book-card>
+  </div>
+
+  <!-- Pagination -->
+  <!-- 
+       If you want to only show pagination when totalPages > 1, 
+       revert to *ngIf="totalPages > 1"
+  -->
+  <div class="pagination" *ngIf="totalPages >= 1">
+    <button 
+      class="pagination-btn prev"
+      [disabled]="currentPage === 0"
+      (click)="onPageChange(currentPage - 1)">
+      &larr;
+    </button>
+
+    <button 
+      class="pagination-btn number"
+      *ngFor="let page of pages"
+      [class.active]="page === currentPage"
+      (click)="onPageChange(page)">
+      {{ page + 1 }}
+    </button>
+
+    <button 
+      class="pagination-btn next"
+      [disabled]="currentPage === totalPages - 1"
+      (click)="onPageChange(currentPage + 1)">
+      &rarr;
+    </button>
   </div>
 </div>
